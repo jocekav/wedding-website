@@ -344,3 +344,147 @@ footer {
   outline: 2px solid var(--green);
   outline-offset: 2px;
 }
+
+/* ============================================
+   Envelope intro overlay
+   ============================================ */
+
+.envelope-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1400px;
+}
+
+.envelope-overlay.is-hidden {
+  display: none;
+}
+
+.envelope-stage {
+  position: relative;
+  width: min(88vw, 380px);
+  aspect-ratio: 4 / 3;
+  cursor: pointer;
+}
+
+.envelope-stage:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 4px;
+}
+
+.envelope-body {
+  position: absolute;
+  inset: 0;
+  background: var(--cream-dark);
+  border: 2.5px solid var(--green);
+  border-radius: 6px;
+}
+
+.envelope-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 52%;
+  background: var(--green);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transform-origin: top center;
+  transform-style: preserve-3d;
+  transition: transform 0.9s cubic-bezier(0.6, 0, 0.3, 1);
+  z-index: 3;
+}
+
+.envelope-pocket {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background: var(--cream);
+  border-top: 2.5px solid var(--green);
+  clip-path: polygon(0 100%, 100% 100%, 100% 0, 50% 35%, 0 0);
+  z-index: 2;
+}
+
+.envelope-seal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--cream);
+  border: 2.5px solid var(--green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 4;
+  transition: opacity 0.3s ease;
+}
+
+.envelope-seal img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.envelope-seal-text {
+  font-family: var(--font-script);
+  font-size: 1.4rem;
+  color: var(--green);
+}
+
+.envelope-hint {
+  position: absolute;
+  bottom: -2.5rem;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--green);
+  opacity: 0.7;
+  font-family: var(--font-sans);
+}
+
+/* ============================================
+   Opened state
+   ============================================ */
+
+.envelope-stage.is-opened .envelope-flap {
+  transform: rotateX(180deg);
+}
+
+.envelope-stage.is-opened .envelope-seal {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* The whole overlay slides up and away once opened,
+   revealing the real page underneath */
+.envelope-overlay.is-opened {
+  transition: transform 0.7s cubic-bezier(0.6, 0, 0.3, 1) 0.55s;
+  transform: translateY(-100%);
+}
+
+/* ============================================
+   Reduced motion: skip the choreography,
+   just fade out quickly on click
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .envelope-flap,
+  .envelope-overlay.is-opened {
+    transition-duration: 0.2s;
+  }
+  .envelope-overlay.is-opened {
+    transform: none;
+    opacity: 0;
+    pointer-events: none;
+  }
+}
