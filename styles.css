@@ -1,0 +1,346 @@
+:root {
+  --green: #1f4d20;
+  --cream: #f7f3ed;
+  --cream-dark: #efe8de;
+  --text: #2f2f2f;
+
+  --font-display: "Fraunces", serif;
+  --font-body: "Quicksand", sans-serif;
+  --font-script: "Caveat", cursive;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.6;
+  font-family: var(--font-body);
+  font-size: 16px;
+}
+
+.hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, .08);
+}
+
+.hero-text {
+  margin-top: 2rem;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  color: var(--green);
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(3rem, 6vw, 5rem);
+  line-height: 1.05;
+}
+
+h2 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.6rem;
+}
+
+.subtitle {
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+}
+
+.button {
+  display: inline-block;
+  background: var(--green);
+  color: white;
+  text-decoration: none;
+  padding: .9rem 2rem;
+  border-radius: 999px;
+  transition: .2s;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.details {
+  padding: 2rem 1.5rem 4rem;
+}
+
+.detail-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.detail-card {
+  background: white;
+  border: 2px solid var(--green);
+  border-radius: 18px;
+  padding: 1.5rem;
+}
+
+.rsvp {
+  max-width: 700px;
+  margin: auto;
+  padding: 4rem 1.5rem;
+}
+
+form {
+  display: grid;
+  gap: 1rem;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+}
+
+input,
+select,
+textarea {
+  padding: .8rem;
+  border: 2px solid #d7d7d7;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+button {
+  background: var(--green);
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: .92;
+}
+
+footer {
+  text-align: center;
+  padding: 3rem;
+}
+
+.hidden {
+  display: none;
+}
+
+#successMessage {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: white;
+  border: 2px solid var(--green);
+  border-radius: 12px;
+}
+
+/* ============================================
+   Quilt-style event details section
+   ============================================ */
+
+.details h2 {
+  margin-bottom: 2.5rem;
+}
+
+.quilt {
+  max-width: 460px;
+  margin: 0 auto;
+}
+
+.quilt-patch {
+  padding: 1.75rem 1.5rem;
+  transform: rotate(var(--rotate, 0deg));
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+  text-align: center;
+}
+
+.quilt-patch h3 {
+  font-family: var(--font-script);
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: var(--green);
+  margin: 0 0 .3rem;
+  line-height: 1.1;
+}
+
+.quilt-patch p {
+  font-family: var(--font-sans);
+  font-size: 1.2rem;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Hand-wobbled border, white fill */
+.quilt-patch--white {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 150' preserveAspectRatio='none'%3E%3Cpath d='M 9 14 C 5 7 16 3 27 6 C 72 1 142 8 197 3 C 210 2 215 10 213 18 C 218 55 209 95 215 130 C 216 140 207 146 197 144 C 150 148 88 142 21 146 C 9 147 3 138 6 128 C 10 88 3 50 9 14 Z' fill='%23ffffff' stroke='%231f4d20' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+/* Hand-wobbled border, cream fill */
+.quilt-patch--cream {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 150' preserveAspectRatio='none'%3E%3Cpath d='M 11 11 C 7 5 19 2 29 5 C 76 1 144 6 199 4 C 211 3 217 12 214 20 C 219 56 208 94 216 128 C 217 138 207 145 197 142 C 149 147 90 141 23 144 C 10 145 4 137 7 126 C 11 87 5 49 11 11 Z' fill='%23efe8de' stroke='%231f4d20' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+/* ============================================
+   Dividers — small motif on a dashed stitch line
+   between each patch
+   ============================================ */
+
+.quilt-divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0.5rem 0;
+}
+
+.quilt-divider::before,
+.quilt-divider::after {
+  content: "";
+  flex: 1;
+  border-top: 2px dashed var(--green);
+}
+
+.quilt-divider-icon {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: var(--green);
+  stroke-width: 2.5;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.quilt-divider-icon--fill {
+  fill: var(--green);
+  stroke: none;
+}
+
+/* ============================================
+   Slightly more breathing room on larger screens
+   ============================================ */
+
+@media (min-width: 600px) {
+
+  .quilt {
+    max-width: 520px;
+  }
+
+  .quilt-patch {
+    padding: 2rem 1.75rem;
+  }
+
+}
+
+/* ============================================
+   RSVP form — cohesive colors, motif, states
+   ============================================ */
+
+:root {
+  --green-dark: #163a17;
+}
+
+.rsvp h2 {
+  margin-bottom: .5rem;
+}
+
+.rsvp > p {
+  text-align: center;
+}
+
+.rsvp-motif {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.rsvp-motif svg {
+  width: 36px;
+  height: 28px;
+}
+
+.rsvp label span {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--green);
+}
+
+.rsvp input,
+.rsvp select,
+.rsvp textarea {
+  padding: .75rem .9rem;
+  border: 1.5px solid var(--cream-dark);
+  background: #fffefb;
+  border-radius: 10px;
+  font-size: .95rem;
+  font-family: var(--font-sans);
+  color: var(--text);
+  transition: border-color .15s, box-shadow .15s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.rsvp select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%231f4d20' stroke-width='1.8'%3E%3Cpath d='M5 8l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right .9rem center;
+  background-size: 14px;
+  padding-right: 2.2rem;
+}
+
+.rsvp input:hover,
+.rsvp select:hover,
+.rsvp textarea:hover {
+  border-color: #c9c0ad;
+}
+
+.rsvp input:focus,
+.rsvp select:focus,
+.rsvp textarea:focus,
+.rsvp input:focus-visible,
+.rsvp select:focus-visible,
+.rsvp textarea:focus-visible {
+  outline: 2px solid transparent;
+  outline-offset: 0;
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(31, 77, 32, 0.12);
+}
+
+.rsvp button {
+  transition: background .15s, transform .15s;
+}
+
+.rsvp button:hover {
+  background: var(--green-dark);
+  transform: translateY(-1px);
+}
+
+.rsvp button:active {
+  transform: translateY(0);
+}
+
+.rsvp button:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 2px;
+}

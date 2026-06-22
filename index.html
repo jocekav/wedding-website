@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jocelyn & Matt's Engagement Party</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&family=Fraunces:wght@400;500;600&family=Caveat:wght@400;500;600;700&display=swap">
+
+<link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+  <!-- Envelope intro overlay. Sits on top of the page until clicked.
+     Swap the SVG inside .envelope-seal for your own cropped art:
+     replace the <span class="envelope-seal-text">M+J</span> with
+     <img src="images/seal.png" alt=""> -->
+<div class="envelope-overlay" id="envelopeOverlay">
+  <div
+    class="envelope-stage"
+    id="envelopeStage"
+    role="button"
+    tabindex="0"
+    aria-label="Open invitation">
+
+    <div class="envelope-body"></div>
+    <div class="envelope-pocket"></div>
+    <div class="envelope-flap"></div>
+
+    <div class="envelope-seal">
+      <span class="envelope-seal-text">M+J</span>
+      <!-- or: <img src="images/seal.png" alt=""> -->
+    </div>
+
+    <p class="envelope-hint">tap to open</p>
+  </div>
+</div>
+
+<header class="hero">
+
+<img
+    src="images/invitation.jpg"
+    alt="Engagement invitation artwork"
+    class="hero-image">
+
+<div class="hero-text">
+    <h1>Celebrate with us!</h1>
+
+    <!-- <p class="subtitle">
+        Join us for an evening of celebration,
+        food, drinks, and good company.
+    </p> -->
+    <!-- <a href="#rsvp" class="button">
+        RSVP
+    </a> -->
+</div>
+
+</header>
+
+<section class="details">
+
+  <!-- <h2>Details</h2> -->
+
+  <div class="quilt">
+
+    <div class="quilt-patch quilt-patch--white" style="--rotate: -1.2deg;">
+      <h3>When</h3>
+      <p>August 8<sup>th</sup>, 2026<br>6:30 PM</p>
+    </div>
+
+    <div class="quilt-divider" data-icon="rings">
+      <svg viewBox="0 0 60 60" class="quilt-divider-icon" aria-hidden="true">
+        <circle cx="22" cy="30" r="11"></circle>
+        <circle cx="38" cy="30" r="11"></circle>
+      </svg>
+    </div>
+
+    <div class="quilt-patch quilt-patch--cream" style="--rotate: 1deg;">
+      <h3>Where</h3>
+      <p>
+        Jocelyn's Parents' Home<br>
+        311 Springfield Drive<br>
+        Cranberry Township, PA 16066
+      </p>
+    </div>
+
+    <div class="quilt-divider" data-icon="heart">
+      <svg viewBox="0 0 24 24" class="quilt-divider-icon quilt-divider-icon--fill" aria-hidden="true">
+        <path d="M12 21s-6.5-4.3-9.3-8.2C.6 9.6 1.7 6 4.8 5c2-.6 3.8.2 4.9 1.8C10.9 5.2 12.6 4.4 14.7 5c3.1 1 4.2 4.6 2.1 7.8C13.9 16.7 12 21 12 21z"></path>
+      </svg>
+    </div>
+
+    <div class="quilt-patch quilt-patch--white" style="--rotate: -0.8deg;">
+      <h3>Food &amp; Drinks</h3>
+      <p>
+        Hors d'oeuvres & desserts <br>
+        Beer, wine, cocktails, and non-alcoholic options
+      </p>
+    </div>
+
+    <div class="quilt-divider" data-icon="stitch">
+      <svg viewBox="0 0 24 24" class="quilt-divider-icon" aria-hidden="true">
+        <path d="M3 6h18M3 12h18M3 18h18"></path>
+      </svg>
+    </div>
+
+    <div class="quilt-patch quilt-patch--cream" style="--rotate: 1.1deg;">
+      <h3>Dress Code</h3>
+      <p>Dressy Casual <br> (collared shirts and summer dresses)</p>
+    </div>
+
+    <div class="quilt-divider" data-icon="stitch">
+      <svg viewBox="0 0 24 24" class="quilt-divider-icon" aria-hidden="true">
+        <path d="M3 6h18M3 12h18M3 18h18"></path>
+      </svg>
+    </div>
+
+    <div class="quilt-patch quilt-patch--white" style="--rotate: 1.1deg;">
+      <h3>RSVP</h3>
+      <p>Kindly respond by July 27. <br> Message Jocelyn at 724-591-1438. (Kids are welcome)</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- <section id="rsvp" class="rsvp">
+
+<h2>RSVP</h2>
+
+<p>
+    Kindly respond by July 27. <br> Message Jocelyn at 724-591-1438. (Kids are welcome)
+</p> -->
+<!-- 
+<form
+    id="rsvpForm"
+    action="https://formspree.io/f/YOUR_FORM_ID"
+    method="POST">
+
+    <label>
+        Name
+        <input
+            type="text"
+            name="name"
+            required>
+    </label>
+
+    <label>
+        Email
+        <input
+            type="email"
+            name="email"
+            required>
+    </label>
+
+    <label>
+        Attendance
+        <select
+            name="attendance"
+            required>
+
+            <option value="">
+                Select One
+            </option>
+
+            <option>
+                Happily Attending
+            </option>
+
+            <option>
+                Unable to Attend
+            </option>
+
+        </select>
+    </label>
+
+    <label>
+        Number of Guests
+        <input
+            type="number"
+            name="guest_count"
+            min="1"
+            max="10">
+    </label>
+
+    <button type="submit">
+        Send RSVP
+    </button>
+
+</form>
+
+<div
+    id="successMessage"
+    class="hidden">
+
+    Thank you! We can't wait to celebrate with you.
+
+</div> -->
+
+</section>
+
+</main>
+
+<script src="script.js"></script>
+<script src="envelope.js"></script>
+
+</body>
+</html>
