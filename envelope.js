@@ -33,12 +33,12 @@
     }, delay);
   }
 
-  stage.addEventListener('click', openEnvelope);
+  // stage.addEventListener('click', openEnvelope);
 
-  stage.addEventListener('keydown', function (event) {
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-      openEnvelope();
-    }
-  });
+  // stage.addEventListener('keydown', function (event) {
+  //   if (event.key === 'Enter' || event.key === ' ') {
+  //     event.preventDefault();
+  //     openEnvelope();
+  //   }
+  // });
 })();
