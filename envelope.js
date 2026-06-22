@@ -1,3 +1,11 @@
+function unlockScroll() {
+  document.body.style.overflow = "";
+  document.documentElement.style.overflow = "";
+}
+
+window.addEventListener("pageshow", unlockScroll);
+window.addEventListener("beforeunload", unlockScroll);
+
 (function () {
   var STORAGE_KEY = 'envelopeOpened';
   var overlay = document.getElementById('envelopeOverlay');
@@ -14,24 +22,18 @@
   // Lock background scroll while the envelope is showing.
   document.body.style.overflow = 'hidden';
 
-  function openEnvelope() {
-    if (stage.classList.contains('is-opened')) return;
+function openEnvelope() {
+  if (stage.classList.contains("is-opened")) return;
 
-    stage.classList.add('is-opened');
-    overlay.classList.add('is-opened');
-    sessionStorage.setItem(STORAGE_KEY, 'true');
-    document.body.style.overflow = '';
+  stage.classList.add("is-opened");
+  overlay.classList.add("is-opened");
+  sessionStorage.setItem(STORAGE_KEY, "true");
 
-    var prefersReducedMotion = window.matchMedia(
-      '(prefers-reduced-motion: reduce)'
-    ).matches;
-
-    var delay = prefersReducedMotion ? 250 : 1300;
-
-    window.setTimeout(function () {
-      overlay.classList.add('is-hidden');
-    }, delay);
-  }
+  setTimeout(() => {
+    overlay.classList.add("is-hidden");
+    document.body.style.overflow = ""; // 👈 MUST be here
+  }, delay);
+}
 
   stage.addEventListener('click', openEnvelope);
 
