@@ -488,3 +488,81 @@ footer {
     pointer-events: none;
   }
 }
+
+/* ============================================
+   Photo section
+   ============================================ */
+
+.photo-section {
+  padding: 1rem 1.5rem 4rem;
+}
+
+.photo-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0 .5rem;
+}
+
+.photo-tilt {
+  position: relative;
+  display: inline-block;
+  transform: rotate(1.8deg);
+  max-width: 420px;
+  width: 88%;
+}
+
+.photo-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.photo-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: calc(100% - 2.2rem); /* stops above caption */
+  pointer-events: none;
+  z-index: 2;
+}
+
+.photo-caption {
+  display: block;
+  text-align: center;
+  font-family: var(--font-script);
+  color: var(--green);
+  font-size: 1.35rem;
+  margin-top: .5rem;
+}
+
+/* ============================================
+   Site footer
+   ============================================ */
+
+.site-footer {
+  padding: 3rem 1.5rem 4rem;
+}
+
+.footer-divider {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.footer-divider::before,
+.footer-divider::after {
+  content: "";
+  flex: 1;
+  border-top: 2px dashed var(--green);
+}
+
+.footer-graphic {
+  width: clamp(80px, 20vw, 140px);
+  height: auto;
+  flex-shrink: 0;
+  display: block;
+}
