@@ -222,8 +222,8 @@ footer {
 }
 
 .quilt-divider-icon {
-  width: 22px;
-  height: 22px;
+  width: 40px;
+  height: 40px;
   fill: none;
   stroke: var(--green);
   stroke-width: 2.5;
