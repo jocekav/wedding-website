@@ -100,7 +100,7 @@
     <div class="quilt-patch quilt-patch--white" style="--rotate: -0.8deg;">
       <h3>Food &amp; Drinks</h3>
       <p>
-        Heavy hors d'oeuvres & desserts <br>
+        Heavy hors d'oeuvres and desserts <br>
         Beer, wine, cocktails, and non-alcoholic options
       </p>
     </div>
@@ -231,12 +231,24 @@
 
 </form>
 
-<div
-    id="successMessage"
-    class="hidden">
+<div id="successOverlay" class="rsvp-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="successTitle">
+  <div class="rsvp-modal">
+    <p class="rsvp-modal-headline" id="successTitle">Thank you!</p>
+    <div class="rsvp-modal-divider">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-4.3-9.3-8.2C.6 9.6 1.7 6 4.8 5c2-.6 3.8.2 4.9 1.8C10.9 5.2 12.6 4.4 14.7 5c3.1 1 4.2 4.6 2.1 7.8C13.9 16.7 12 21 12 21z"/></svg>
+    </div>
+    <p class="rsvp-modal-body">We can't wait to celebrate with you.</p>
+    <button class="rsvp-modal-btn" id="successClose">Close</button>
+  </div>
+</div>
 
-    Thank you! We can't wait to celebrate with you.
-
+<!-- Error overlay -->
+<div id="errorOverlay" class="rsvp-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="errorTitle">
+  <div class="rsvp-modal rsvp-modal--error">
+    <p class="rsvp-modal-headline rsvp-modal-headline--error" id="errorTitle">Something went wrong</p>
+    <p class="rsvp-modal-body">Please text Jocelyn at <a href="sms:7245911438">724-591-1438</a> to RSVP directly.</p>
+    <button class="rsvp-modal-btn rsvp-modal-btn--error" id="errorClose">Close</button>
+  </div>
 </div>
 
 </section>
@@ -252,83 +264,6 @@
       aria-hidden="true">
   </div>
 </footer>
-
-<!-- <section id="rsvp" class="rsvp">
-
-<h2>RSVP</h2>
-
-<p>
-    Kindly respond by July 27. <br> Message Jocelyn at 724-591-1438. (Kids are welcome)
-</p>
-
-<form
-    id="rsvpForm"
-    action="https://formspree.io/f/YOUR_FORM_ID"
-    method="POST">
-
-    <label>
-        Name
-        <input
-            type="text"
-            name="name"
-            required>
-    </label>
-
-    <label>
-        Email
-        <input
-            type="email"
-            name="email"
-            required>
-    </label>
-
-    <label>
-        Attendance
-        <select
-            name="attendance"
-            required>
-
-            <option value="">
-                Select One
-            </option>
-
-            <option>
-                Happily Attending
-            </option>
-
-            <option>
-                Unable to Attend
-            </option>
-
-        </select>
-    </label>
-
-    <label>
-        Number of Guests
-        <input
-            type="number"
-            name="guest_count"
-            min="1"
-            max="10">
-    </label>
-
-    <button type="submit">
-        Send RSVP
-    </button>
-
-</form>
-
-<div
-    id="successMessage"
-    class="hidden">
-
-    Thank you! We can't wait to celebrate with you.
-
-</div>
-
-</section>
-
-</main> -->
 
 <script src="script.js"></script>
 <script defer src="envelope.js"></script>
